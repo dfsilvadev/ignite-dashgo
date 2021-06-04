@@ -24,7 +24,40 @@ const options = {
     enabled: false,
   },
   tooltip: {
-    enabled: false,
+    enabled: true,
+    shared: true,
+    followCursor: true,
+    custom: undefined,
+    theme: "dark",
+    style: {
+      fontSize: "12px",
+      fontFamily: undefined,
+    },
+    onDatasetHover: {
+      highlightDataSeries: true,
+    },
+    x: {
+      show: false,
+    },
+    y: {
+      formatter: undefined,
+      title: {
+        formatter: (seriesName) => "Inscritos",
+      },
+    },
+  },
+  markers: {
+    size: 0,
+    colors: [theme.colors.pink[500]],
+    strokeColors: theme.colors.pink[900],
+    strokeWidth: 2,
+    fillOpacity: 1,
+    radius: 2,
+    showNullDataPoints: true,
+    hover: {
+      size: undefined,
+      sizeOffset: 4,
+    },
   },
   xaxis: {
     type: "datetime" as any,
@@ -55,7 +88,12 @@ const options = {
     },
     colors: [theme.colors.pink[500]],
   },
-  colors: [theme.colors.pink[500]],
+  stroke: {
+    show: true,
+    colors: [theme.colors.pink[500]],
+    width: 2,
+    dashArray: 0,
+  },
 };
 
 const series = [{ name: "series1", data: [31, 120, 10, 28, 61, 109] }];
