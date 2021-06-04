@@ -1,4 +1,4 @@
-import { Flex, Button, Stack } from "@chakra-ui/react";
+import { Flex, Button, Stack, Icon } from "@chakra-ui/react";
 import { TiChevronRight } from "react-icons/ti";
 
 import { Input } from "../components/Form/Input";
@@ -43,7 +43,7 @@ export default function Home() {
 
           <Button
             type="submit"
-            rightIcon={<TiChevronRight />}
+            rightIcon={<Icon as={TiChevronRight} />}
             colorScheme="pink"
             size="lg"
           >
