@@ -19,7 +19,12 @@ export default function UserList() {
         paddingX="6"
       >
         <Sidebar />
-        <Box flex="1" borderRadius={8} background="gray.800" padding="8">
+        <Box
+          flex="1"
+          borderRadius={8}
+          background="gray.800"
+          padding={["4", "8"]}
+        >
           <Flex marginBottom="8" justify="space-between" align="center">
             <Heading size="lg" fontWeight="normal">
               Usuários

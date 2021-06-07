@@ -25,15 +25,20 @@ export default function CreateUser() {
         paddingX="6"
       >
         <Sidebar />
-        <Box flex="1" borderRadius={8} background="gray.800" padding="8">
+        <Box
+          flex="1"
+          borderRadius={8}
+          background="gray.800"
+          padding={["4", "8"]}
+        >
           <Heading size="lg" fontWeight="normal">
             Criar usuário
           </Heading>
 
           <Divider my="6" borderColor="gray.700" />
 
-          <VStack spacing="8">
-            <SimpleGrid minChildWidth="240px" spacing="8" width="100%">
+          <VStack spacing={["4", "8"]}>
+            <SimpleGrid minChildWidth="240px" spacing={["4", "8"]} width="100%">
               <Input
                 name="name"
                 label="Nome Completo"
@@ -55,7 +60,7 @@ export default function CreateUser() {
                 _hover={{ bgColor: "gray.900" }}
               />
             </SimpleGrid>
-            <SimpleGrid minChildWidth="240px" spacing="8" width="100%">
+            <SimpleGrid minChildWidth="240px" spacing={["4", "8"]} width="100%">
               <Input
                 name="password"
                 label="Senha"

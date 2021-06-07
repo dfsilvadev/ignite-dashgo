@@ -13,13 +13,20 @@ import {
   Text,
   Tr,
   Stack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiDeleteBin5Line, RiEdit2Line, RiMore2Fill } from "react-icons/ri";
+
 export function UserTbody() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Tbody>
       <Tr>
-        <Td paddingX="6">
+        <Td p={["2", "2", "6"]}>
           <Checkbox colorScheme="pink" />
         </Td>
         <Td>
@@ -30,14 +37,18 @@ export function UserTbody() {
             </Text>
           </Box>
         </Td>
-        <Td>
-          <Box>
-            <Text fontSize="smal" color="gray.300">
-              Rua Renato Alpino Dela Lata, 100
-            </Text>
-          </Box>
-        </Td>
-        <Td>11 95199-1612</Td>
+        {isWideVersion && (
+          <Td>
+            <Box>
+              <Text fontSize="smal" color="gray.300">
+                Rua Renato Alpino Dela Lata, 100
+              </Text>
+            </Box>
+          </Td>
+        )}
+
+        {isWideVersion && <Td>11 95199-1612</Td>}
+
         <Td>
           <Popover>
             <PopoverTrigger>

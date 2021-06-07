@@ -1,7 +1,7 @@
-import { Table } from "@chakra-ui/react";
+import { Box, Table } from "@chakra-ui/react";
 
 import { UserTbody } from "./UserTbody";
-import { UserThead } from "./UserTHead";
+import { UserThead } from "./UserThead";
 
 export function UserTableList() {
   return (
