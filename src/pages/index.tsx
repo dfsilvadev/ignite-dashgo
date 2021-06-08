@@ -25,26 +25,8 @@ export default function Home() {
         >
           <strong className={styles.title}>Sign in</strong>
           <Stack spacing={4}>
-            <Input
-              name="email"
-              type="email"
-              label="E-mail"
-              size="lg"
-              background="gray.900"
-              variant="filled"
-              focusBorderColor="pink.500"
-              _hover={{ bgColor: "gray.900" }}
-            />
-            <Input
-              name="password"
-              type="password"
-              label="Password"
-              size="lg"
-              background="gray.900"
-              variant="filled"
-              focusBorderColor="pink.500"
-              _hover={{ bgColor: "gray.900" }}
-            />
+            <Input name="email" type="email" label="E-mail" size="lg" />
+            <Input name="password" type="password" label="Password" size="lg" />
 
             <Button
               type="submit"

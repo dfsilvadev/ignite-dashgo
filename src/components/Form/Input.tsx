@@ -15,7 +15,16 @@ export function Input({ name, label, type, ...props }: InputPros) {
     <FormControl>
       {!!label && <FormLabel htmlFor="name">{label}</FormLabel>}
 
-      <ChakraInput type={type} name={name} id={name} {...props} />
+      <ChakraInput
+        type={type}
+        name={name}
+        id={name}
+        {...props}
+        background="gray.900"
+        variant="filled"
+        focusBorderColor="pink.500"
+        _hover={{ bgColor: "gray.900" }}
+      />
     </FormControl>
   );
 }

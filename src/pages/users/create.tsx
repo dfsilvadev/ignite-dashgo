@@ -55,21 +55,8 @@ export default function CreateUser() {
                   label="Nome Completo"
                   type="text"
                   size="lg"
-                  background="gray.900"
-                  variant="filled"
-                  focusBorderColor="pink.500"
-                  _hover={{ bgColor: "gray.900" }}
                 />
-                <Input
-                  name="email"
-                  label="E-mail"
-                  type="email"
-                  size="lg"
-                  background="gray.900"
-                  variant="filled"
-                  focusBorderColor="pink.500"
-                  _hover={{ bgColor: "gray.900" }}
-                />
+                <Input name="email" label="E-mail" type="email" size="lg" />
               </SimpleGrid>
               <SimpleGrid
                 minChildWidth="240px"
@@ -81,20 +68,12 @@ export default function CreateUser() {
                   label="Senha"
                   type="password"
                   size="lg"
-                  background="gray.900"
-                  variant="filled"
-                  focusBorderColor="pink.500"
-                  _hover={{ bgColor: "gray.900" }}
                 />
                 <Input
                   name="password_confirmation"
                   label="Confirme a senha"
                   type="password"
                   size="lg"
-                  background="gray.900"
-                  variant="filled"
-                  focusBorderColor="pink.500"
-                  _hover={{ bgColor: "gray.900" }}
                 />
               </SimpleGrid>
             </VStack>
