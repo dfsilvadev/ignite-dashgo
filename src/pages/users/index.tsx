@@ -2,6 +2,7 @@ import { Box, Button, Flex, Heading, Icon } from "@chakra-ui/react";
 import { RiAddLine } from "react-icons/ri";
 import Link from "next/link";
 import Head from "next/head";
+import { useQuery } from "react-query";
 
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
@@ -10,11 +11,12 @@ import { UserTableList } from "../../components/UserTableList";
 import { useEffect } from "react";
 
 export default function UserList() {
-  useEffect(() => {
-    fetch("http://localhost:3000/api/users")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
+  const { data, isLoading, error } = useQuery("users", async () => {
+    const response = await fetch("http://localhost:3000/api/users");
+    const data = await response.json();
+
+    return data;
+  });
 
   return (
     <>
