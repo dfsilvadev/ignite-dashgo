@@ -21,9 +21,11 @@ import { Sidebar } from "../../components/Sidebar";
 import { useUsers } from "../../services/hooks/users/useUsers";
 import { UserTheadList } from "../../components/UserList/userTheadList";
 import { UserTbodyList } from "../../components/UserList/userTbodyList";
+import { useState } from "react";
 
 export default function UserList() {
-  const { data, isLoading, isFetching, error } = useUsers();
+  const [page, setPage] = useState(1);
+  const { data, isLoading, isFetching, error } = useUsers(page);
 
   return (
     <>
@@ -79,7 +81,7 @@ export default function UserList() {
                 <Table colorScheme="whiteAlpha">
                   <UserTheadList />
                   {data ? (
-                    <UserTbodyList users={data} />
+                    <UserTbodyList users={data.users} />
                   ) : (
                     <Tfoot>
                       <Tr>
@@ -89,7 +91,11 @@ export default function UserList() {
                     </Tfoot>
                   )}
                 </Table>
-                <Pagination />
+                <Pagination
+                  totalCountOfRegisters={data.totalCount}
+                  currentPage={page}
+                  onPageChange={setPage}
+                />
               </>
             )}
           </Box>
