@@ -19,8 +19,8 @@ import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import { useUsers } from "../../services/hooks/users/useUsers";
-import { UserTheadList } from "../../components/UserList/userTheadList";
-import { UserTbodyList } from "../../components/UserList/userTbodyList";
+import { UserTheadList } from "../../components/UserTableList/userTheadList";
+import { UserTbodyList } from "../../components/UserTableList/userTbodyList";
 import { useState } from "react";
 
 export default function UserList() {

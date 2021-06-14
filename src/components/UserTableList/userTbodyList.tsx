@@ -3,6 +3,7 @@ import {
   Button,
   Checkbox,
   Icon,
+  Link,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -16,6 +17,8 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiDeleteBin5Line, RiEdit2Line, RiMore2Fill } from "react-icons/ri";
+import { api } from "../../services/api";
+import { queryClient } from "../../services/queryClient";
 
 type User = {
   id: string;
@@ -34,6 +37,18 @@ export function UserTbodyList({ users }: UserTbodyListProps) {
     lg: true,
   });
 
+  async function handlePrefetchUser(userId: string) {
+    await queryClient.prefetchQuery(
+      ["user", userId],
+      async () => {
+        const response = await api.get(`users/${userId}`);
+
+        return response.data;
+      },
+      { staleTime: 1000 * 60 * 60 * 24 /* 24 hours */ }
+    );
+  }
+
   return (
     <Tbody>
       {users.map((user) => {
@@ -44,7 +59,9 @@ export function UserTbodyList({ users }: UserTbodyListProps) {
             </Td>
             <Td>
               <Box>
-                <Text fontWeight="bold">{user.name}</Text>
+                <Link onMouseEnter={() => handlePrefetchUser(user.id)}>
+                  <Text fontWeight="bold">{user.name}</Text>
+                </Link>
                 <Text fontSize="smal" color="gray.300">
                   {user.email}
                 </Text>
